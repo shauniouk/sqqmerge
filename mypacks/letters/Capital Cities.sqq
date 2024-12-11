@@ -1,0 +1,1390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<round>
+	<game>Keypad Quiz</game>
+	<title>SQQ Merge Packer</title>
+	<points_per_question>4</points_per_question>
+	<go_wide>false</go_wide>
+	<speed_bonus>true</speed_bonus>
+	<questions>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Afghanistan </q>
+			<short_answer>K</short_answer>
+			<long_answer>Kabul</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Albania </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tirana</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Algeria </q>
+			<short_answer>A</short_answer>
+			<long_answer>Algiers</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of American Samoa </q>
+			<short_answer>P</short_answer>
+			<long_answer>Pago Pago</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Andorra </q>
+			<short_answer>A</short_answer>
+			<long_answer>Andorra la Vella</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Angola </q>
+			<short_answer>L</short_answer>
+			<long_answer>Luanda</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Antigua and Barbuda </q>
+			<short_answer>S</short_answer>
+			<long_answer>St. John's</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Argentina </q>
+			<short_answer>B</short_answer>
+			<long_answer>Buenos Aires</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Armenia </q>
+			<short_answer>Y</short_answer>
+			<long_answer>Yerevan</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Aruba </q>
+			<short_answer>O</short_answer>
+			<long_answer>Oranjestad</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Ascension Island </q>
+			<short_answer>G</short_answer>
+			<long_answer>Georgetown</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Australia </q>
+			<short_answer>C</short_answer>
+			<long_answer>Canberra</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Austria </q>
+			<short_answer>V</short_answer>
+			<long_answer>Vienna</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Azerbaijan </q>
+			<short_answer>B</short_answer>
+			<long_answer>Baku</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Bahamas </q>
+			<short_answer>N</short_answer>
+			<long_answer>Nassau</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Bahrain </q>
+			<short_answer>M</short_answer>
+			<long_answer>Manama</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Bangladesh </q>
+			<short_answer>D</short_answer>
+			<long_answer>Dhaka</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Barbados </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bridgetown</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Belarus </q>
+			<short_answer>M</short_answer>
+			<long_answer>Minsk</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Belgium </q>
+			<short_answer>B</short_answer>
+			<long_answer>Brussels</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Belize </q>
+			<short_answer>B</short_answer>
+			<long_answer>Belmopan</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Benin </q>
+			<short_answer>P</short_answer>
+			<long_answer>Porto-Novo</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Bermuda </q>
+			<short_answer>H</short_answer>
+			<long_answer>Hamilton</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Bhutan </q>
+			<short_answer>T</short_answer>
+			<long_answer>Thimphu</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Bolivia </q>
+			<short_answer>S</short_answer>
+			<long_answer>Sucre</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Bolivia </q>
+			<short_answer>L</short_answer>
+			<long_answer>La Paz</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Bosnia and Herzegovina </q>
+			<short_answer>S</short_answer>
+			<long_answer>Sarajevo</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Botswana </q>
+			<short_answer>G</short_answer>
+			<long_answer>Gaborone</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Brazil </q>
+			<short_answer>B</short_answer>
+			<long_answer>Brasilia</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of British Virgin Islands </q>
+			<short_answer>R</short_answer>
+			<long_answer>Road Town</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Brunei </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bandar Seri Begawan</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Bulgaria </q>
+			<short_answer>S</short_answer>
+			<long_answer>Sofia</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Burkina Faso </q>
+			<short_answer>O</short_answer>
+			<long_answer>Ouagadougou</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Burundi </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bujumbura</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Cambodia </q>
+			<short_answer>P</short_answer>
+			<long_answer>Phnom Penh</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Canada </q>
+			<short_answer>O</short_answer>
+			<long_answer>Ottawa</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Cape Verde </q>
+			<short_answer>P</short_answer>
+			<long_answer>Praia</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Cayman Islands </q>
+			<short_answer>G</short_answer>
+			<long_answer>George Town</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Central African Republic </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bangui</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Chile </q>
+			<short_answer>S</short_answer>
+			<long_answer>Santiago</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of China </q>
+			<short_answer>B</short_answer>
+			<long_answer>Beijing</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Christmas Island </q>
+			<short_answer>F</short_answer>
+			<long_answer>Flying Fish Cove</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Cocos (Keeling) Islands </q>
+			<short_answer>W</short_answer>
+			<long_answer>West Island</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Colombia </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bogota</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Comoros </q>
+			<short_answer>M</short_answer>
+			<long_answer>Moroni</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Cook Islands </q>
+			<short_answer>A</short_answer>
+			<long_answer>Avarua</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Costa Rica </q>
+			<short_answer>S</short_answer>
+			<long_answer>San Jose</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Croatia </q>
+			<short_answer>Z</short_answer>
+			<long_answer>Zagreb</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Cuba </q>
+			<short_answer>H</short_answer>
+			<long_answer>Havana</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of CuraÃ§ao </q>
+			<short_answer>W</short_answer>
+			<long_answer>Willemstad</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Cyprus </q>
+			<short_answer>N</short_answer>
+			<long_answer>Nicosia</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Czech Republic </q>
+			<short_answer>P</short_answer>
+			<long_answer>Prague</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Democratic Republic of the Congo </q>
+			<short_answer>K</short_answer>
+			<long_answer>Kinshasa</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Denmark </q>
+			<short_answer>C</short_answer>
+			<long_answer>Copenhagen</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Djibouti </q>
+			<short_answer>D</short_answer>
+			<long_answer>Djibouti</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Dominica </q>
+			<short_answer>R</short_answer>
+			<long_answer>Roseau</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Dominican Republic </q>
+			<short_answer>S</short_answer>
+			<long_answer>Santo Domingo</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of East Timor (Timor-Leste) </q>
+			<short_answer>D</short_answer>
+			<long_answer>Dili</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Easter Island </q>
+			<short_answer>H</short_answer>
+			<long_answer>Hanga Roa</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Ecuador </q>
+			<short_answer>Q</short_answer>
+			<long_answer>Quito</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Egypt </q>
+			<short_answer>C</short_answer>
+			<long_answer>Cairo</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of El Salvador </q>
+			<short_answer>S</short_answer>
+			<long_answer>San Salvador</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Equatorial Guinea </q>
+			<short_answer>M</short_answer>
+			<long_answer>Malabo</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Eritrea </q>
+			<short_answer>A</short_answer>
+			<long_answer>Asmara</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Estonia </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tallinn</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Ethiopia </q>
+			<short_answer>A</short_answer>
+			<long_answer>Addis Ababa</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Falkland Islands </q>
+			<short_answer>S</short_answer>
+			<long_answer>Stanley</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Federated States of Micronesia </q>
+			<short_answer>P</short_answer>
+			<long_answer>Palikir</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Fiji </q>
+			<short_answer>S</short_answer>
+			<long_answer>Suva</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Finland </q>
+			<short_answer>H</short_answer>
+			<long_answer>Helsinki</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of France </q>
+			<short_answer>P</short_answer>
+			<long_answer>Paris</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of French Guiana </q>
+			<short_answer>C</short_answer>
+			<long_answer>Cayenne</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of French Polynesia </q>
+			<short_answer>P</short_answer>
+			<long_answer>Papeete</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Gabon </q>
+			<short_answer>L</short_answer>
+			<long_answer>Libreville</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Gambia </q>
+			<short_answer>B</short_answer>
+			<long_answer>Banjul</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Georgia </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tbilisi</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Germany </q>
+			<short_answer>B</short_answer>
+			<long_answer>Berlin</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Ghana </q>
+			<short_answer>A</short_answer>
+			<long_answer>Accra</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Gibraltar </q>
+			<short_answer>G</short_answer>
+			<long_answer>Gibraltar</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Greece </q>
+			<short_answer>A</short_answer>
+			<long_answer>Athens</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Greenland </q>
+			<short_answer>N</short_answer>
+			<long_answer>Nuuk</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Grenada </q>
+			<short_answer>S</short_answer>
+			<long_answer>St. George's</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Guatemala </q>
+			<short_answer>G</short_answer>
+			<long_answer>Guatemala City</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Guernsey </q>
+			<short_answer>S</short_answer>
+			<long_answer>St. Peter Port</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Guinea </q>
+			<short_answer>C</short_answer>
+			<long_answer>Conakry</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Guinea-Bissau </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bissau</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Guyana </q>
+			<short_answer>G</short_answer>
+			<long_answer>Georgetown</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Haiti </q>
+			<short_answer>P</short_answer>
+			<long_answer>Port-au-Prince</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Honduras </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tegucigalpa</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Hungary </q>
+			<short_answer>B</short_answer>
+			<long_answer>Budapest</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Iceland </q>
+			<short_answer>R</short_answer>
+			<long_answer>Reykjavic</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of India </q>
+			<short_answer>N</short_answer>
+			<long_answer>New Delhi</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Indonesia </q>
+			<short_answer>J</short_answer>
+			<long_answer>Jakarta</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Iran </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tehran</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Iraq </q>
+			<short_answer>B</short_answer>
+			<long_answer>Baghdad</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Ireland </q>
+			<short_answer>D</short_answer>
+			<long_answer>Dublin</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Isle of Man </q>
+			<short_answer>D</short_answer>
+			<long_answer>Douglas</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Israel </q>
+			<short_answer>J</short_answer>
+			<long_answer>Jerusalem</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Italy </q>
+			<short_answer>R</short_answer>
+			<long_answer>Rome</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Jamaica </q>
+			<short_answer>K</short_answer>
+			<long_answer>Kingston</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Japan </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tokyo</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Jersey </q>
+			<short_answer>S</short_answer>
+			<long_answer>St. Helier</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Jordan </q>
+			<short_answer>A</short_answer>
+			<long_answer>Amman</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Kazakhstan </q>
+			<short_answer>A</short_answer>
+			<long_answer>Astana</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Kenya </q>
+			<short_answer>N</short_answer>
+			<long_answer>Nairobi</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Kiribati </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tarawa</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Kosovo </q>
+			<short_answer>P</short_answer>
+			<long_answer>Pristina</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Kuwait </q>
+			<short_answer>K</short_answer>
+			<long_answer>Kuwait City</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Kyrgyzstan </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bishkek</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Laos </q>
+			<short_answer>V</short_answer>
+			<long_answer>Vientiane</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Latvia </q>
+			<short_answer>R</short_answer>
+			<long_answer>Riga</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Lebanon </q>
+			<short_answer>B</short_answer>
+			<long_answer>Beirut</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Lesotho </q>
+			<short_answer>M</short_answer>
+			<long_answer>Maseru</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Liberia </q>
+			<short_answer>M</short_answer>
+			<long_answer>Monrovia</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Libya </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tripoli</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Liechtenstein </q>
+			<short_answer>V</short_answer>
+			<long_answer>Vaduz</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Lithuania </q>
+			<short_answer>V</short_answer>
+			<long_answer>Vilnius</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Luxembourg </q>
+			<short_answer>L</short_answer>
+			<long_answer>Luxembourg</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Macedonia </q>
+			<short_answer>S</short_answer>
+			<long_answer>Skopje</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Madagascar </q>
+			<short_answer>A</short_answer>
+			<long_answer>Antananarivo</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Malawi </q>
+			<short_answer>L</short_answer>
+			<long_answer>Lilongwe</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Malaysia </q>
+			<short_answer>K</short_answer>
+			<long_answer>Kuala Lumpur</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Mali </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bamako</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Malta </q>
+			<short_answer>V</short_answer>
+			<long_answer>Valletta</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Marshall Islands </q>
+			<short_answer>M</short_answer>
+			<long_answer>Majuro</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Mauritania </q>
+			<short_answer>N</short_answer>
+			<long_answer>Nouakchott</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Mauritius </q>
+			<short_answer>P</short_answer>
+			<long_answer>Port Louis</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Mexico </q>
+			<short_answer>M</short_answer>
+			<long_answer>Mexico City</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Moldova </q>
+			<short_answer>C</short_answer>
+			<long_answer>Chisinau</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Monaco </q>
+			<short_answer>M</short_answer>
+			<long_answer>Monaco</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Mongolia </q>
+			<short_answer>U</short_answer>
+			<long_answer>Ulaanbaatar</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Montenegro </q>
+			<short_answer>P</short_answer>
+			<long_answer>Podgorica</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Montserrat </q>
+			<short_answer>P</short_answer>
+			<long_answer>Plymouth</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Morocco </q>
+			<short_answer>R</short_answer>
+			<long_answer>Rabat</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Mozambique </q>
+			<short_answer>M</short_answer>
+			<long_answer>Maputo</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Myanmar </q>
+			<short_answer>N</short_answer>
+			<long_answer>Naypyidaw</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Nagorno-Karabakh Republic </q>
+			<short_answer>S</short_answer>
+			<long_answer>Stepanakert</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Namibia </q>
+			<short_answer>W</short_answer>
+			<long_answer>Windhoek</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Nauru </q>
+			<short_answer>Y</short_answer>
+			<long_answer>Yaren</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Nepal </q>
+			<short_answer>K</short_answer>
+			<long_answer>Kathmandu</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Netherlands </q>
+			<short_answer>A</short_answer>
+			<long_answer>Amsterdam</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of New Zealand </q>
+			<short_answer>W</short_answer>
+			<long_answer>Wellington</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Nicaragua </q>
+			<short_answer>M</short_answer>
+			<long_answer>Managua</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Niger </q>
+			<short_answer>N</short_answer>
+			<long_answer>Niamey</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Nigeria </q>
+			<short_answer>A</short_answer>
+			<long_answer>Abuja</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Niue </q>
+			<short_answer>A</short_answer>
+			<long_answer>Alofi</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Norfolk Island </q>
+			<short_answer>K</short_answer>
+			<long_answer>Kingston</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of North Korea </q>
+			<short_answer>P</short_answer>
+			<long_answer>Pyongyang</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Northern Cyprus </q>
+			<short_answer>N</short_answer>
+			<long_answer>Nicosia</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of United Kingdom Northern Ireland </q>
+			<short_answer>B</short_answer>
+			<long_answer>Belfast</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Northern Mariana Islands </q>
+			<short_answer>S</short_answer>
+			<long_answer>Saipan</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Norway </q>
+			<short_answer>O</short_answer>
+			<long_answer>Oslo</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Oman </q>
+			<short_answer>M</short_answer>
+			<long_answer>Muscat</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Pakistan </q>
+			<short_answer>I</short_answer>
+			<long_answer>Islamabad</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Palau </q>
+			<short_answer>N</short_answer>
+			<long_answer>Ngerulmud</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Palestine </q>
+			<short_answer>J</short_answer>
+			<long_answer>Jerusalem</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Panama </q>
+			<short_answer>P</short_answer>
+			<long_answer>Panama City</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Papua New Guinea </q>
+			<short_answer>P</short_answer>
+			<long_answer>Port Moresby</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Paraguay </q>
+			<short_answer>A</short_answer>
+			<long_answer>Asuncion</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Peru </q>
+			<short_answer>L</short_answer>
+			<long_answer>Lima</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Philippines </q>
+			<short_answer>M</short_answer>
+			<long_answer>Manila</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Pitcairn Islands </q>
+			<short_answer>A</short_answer>
+			<long_answer>Adamstown</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Poland </q>
+			<short_answer>W</short_answer>
+			<long_answer>Warsaw</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Portugal </q>
+			<short_answer>L</short_answer>
+			<long_answer>Lisbon</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Puerto Rico </q>
+			<short_answer>S</short_answer>
+			<long_answer>San Juan</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Qatar </q>
+			<short_answer>D</short_answer>
+			<long_answer>Doha</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Republic of China (Taiwan) </q>
+			<short_answer>T</short_answer>
+			<long_answer>Taipei</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Republic of the Congo </q>
+			<short_answer>B</short_answer>
+			<long_answer>Brazzaville</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Romania </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bucharest</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Russia </q>
+			<short_answer>M</short_answer>
+			<long_answer>Moscow</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Rwanda </q>
+			<short_answer>K</short_answer>
+			<long_answer>Kigali</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Saint Helena </q>
+			<short_answer>J</short_answer>
+			<long_answer>Jamestown</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Saint Kitts and Nevis </q>
+			<short_answer>B</short_answer>
+			<long_answer>Basseterre</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Saint Lucia </q>
+			<short_answer>C</short_answer>
+			<long_answer>Castries</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Saint Martin </q>
+			<short_answer>M</short_answer>
+			<long_answer>Marigot</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Saint Pierre and Miquelon </q>
+			<short_answer>S</short_answer>
+			<long_answer>St. Pierre</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Saint Vincent and the Grenadines </q>
+			<short_answer>K</short_answer>
+			<long_answer>Kingstown</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Samoa </q>
+			<short_answer>A</short_answer>
+			<long_answer>Apia</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of San Marino </q>
+			<short_answer>S</short_answer>
+			<long_answer>San Marino</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Saudi Arabia </q>
+			<short_answer>R</short_answer>
+			<long_answer>Riyadh</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Scotland </q>
+			<short_answer>E</short_answer>
+			<long_answer>Edinburgh</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Senegal </q>
+			<short_answer>D</short_answer>
+			<long_answer>Dakar</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Serbia </q>
+			<short_answer>B</short_answer>
+			<long_answer>Belgrade</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Seychelles </q>
+			<short_answer>V</short_answer>
+			<long_answer>Victoria</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Sierra Leone </q>
+			<short_answer>F</short_answer>
+			<long_answer>Freetown</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Singapore </q>
+			<short_answer>S</short_answer>
+			<long_answer>Singapore</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Sint Maarten </q>
+			<short_answer>P</short_answer>
+			<long_answer>Philipsburg</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Slovakia </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bratislava</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Slovenia </q>
+			<short_answer>L</short_answer>
+			<long_answer>Ljubljana</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Solomon Islands </q>
+			<short_answer>H</short_answer>
+			<long_answer>Honiara</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Somalia </q>
+			<short_answer>M</short_answer>
+			<long_answer>Mogadishu</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Somaliland </q>
+			<short_answer>H</short_answer>
+			<long_answer>Hargeisa</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of South Africa </q>
+			<short_answer>P</short_answer>
+			<long_answer>Pretoria</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of South Georgia and the South Sandwich Islands </q>
+			<short_answer>G</short_answer>
+			<long_answer>Grytviken</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of South Korea </q>
+			<short_answer>S</short_answer>
+			<long_answer>Seoul</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of South Ossetia </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tskhinvali</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of South Sudan </q>
+			<short_answer>J</short_answer>
+			<long_answer>Juba</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Spain </q>
+			<short_answer>M</short_answer>
+			<long_answer>Madrid</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Sri Lanka </q>
+			<short_answer>S</short_answer>
+			<long_answer>Sri Jayawardenapura Kotte</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Sudan </q>
+			<short_answer>K</short_answer>
+			<long_answer>Khartoum</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Suriname </q>
+			<short_answer>P</short_answer>
+			<long_answer>Paramaribo</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Swaziland </q>
+			<short_answer>M</short_answer>
+			<long_answer>Mbabane</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Sweden </q>
+			<short_answer>S</short_answer>
+			<long_answer>Stockholm</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Switzerland </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bern</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Syria </q>
+			<short_answer>D</short_answer>
+			<long_answer>Damascus</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Tajikistan </q>
+			<short_answer>D</short_answer>
+			<long_answer>Dushanbe</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Tanzania </q>
+			<short_answer>D</short_answer>
+			<long_answer>Dodoma</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Thailand </q>
+			<short_answer>B</short_answer>
+			<long_answer>Bangkok</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Transnistria </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tiraspol</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Trinidad and Tobago </q>
+			<short_answer>P</short_answer>
+			<long_answer>Port of Spain</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Tunisia </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tunis</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Turkey </q>
+			<short_answer>A</short_answer>
+			<long_answer>Ankara</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Turkmenistan </q>
+			<short_answer>A</short_answer>
+			<long_answer>Ashgabat</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Turks and Caicos Islands </q>
+			<short_answer>C</short_answer>
+			<long_answer>Cockburn Town</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Tuvalu </q>
+			<short_answer>F</short_answer>
+			<long_answer>Funafuti</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Uganda </q>
+			<short_answer>K</short_answer>
+			<long_answer>Kampala</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Ukraine </q>
+			<short_answer>K</short_answer>
+			<long_answer>Kyiv</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of United Arab Emirates </q>
+			<short_answer>A</short_answer>
+			<long_answer>Abu Dhabi</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of United Kingdom; England </q>
+			<short_answer>L</short_answer>
+			<long_answer>London</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of United States </q>
+			<short_answer>W</short_answer>
+			<long_answer>Washington, D.C.</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of United States Virgin Islands </q>
+			<short_answer>C</short_answer>
+			<long_answer>Charlotte Amalie</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Uruguay </q>
+			<short_answer>M</short_answer>
+			<long_answer>Montevideo</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Uzbekistan </q>
+			<short_answer>T</short_answer>
+			<long_answer>Tashkent</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Vanuatu </q>
+			<short_answer>P</short_answer>
+			<long_answer>Port Vila</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Vatican City </q>
+			<short_answer>V</short_answer>
+			<long_answer>Vatican City</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Venezuela </q>
+			<short_answer>C</short_answer>
+			<long_answer>Caracas</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Vietnam </q>
+			<short_answer>H</short_answer>
+			<long_answer>Hanoi</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Wales </q>
+			<short_answer>C</short_answer>
+			<long_answer>Cardiff</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Zambia </q>
+			<short_answer>L</short_answer>
+			<long_answer>Lusaka</long_answer>
+		</question>
+		<question>
+			<user_view>letters</user_view>
+			<q>What is the capital city of Zimbabwe </q>
+			<short_answer>H</short_answer>
+			<long_answer>Harare</long_answer>
+		</question>
+	</questions>
+</round>

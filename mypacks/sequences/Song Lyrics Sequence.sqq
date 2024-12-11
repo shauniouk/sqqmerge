@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<round>
+    <game>Keypad Quiz</game>
+    <title>SQQ Merge Packer</title>
+    <points_per_question>4</points_per_question>
+    <go_wide>false</go_wide>
+    <speed_bonus>true</speed_bonus>
+    <questions>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>Bohemian Rhapsody</short_answer>
+            <long_answer/>
+            <options>
+                <option>I'm just a poor boy</option>
+                <option>Nobody loves me</option>
+                <option>He's just a poor boy</option>
+                <option>From a poor family</option>
+                <option>Spare him his life</option>
+                <option>From this monstrosity</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>Summer Nights</short_answer>
+            <long_answer/>
+            <options>
+                <option>It turned colder</option>
+                <option>That's where it ends</option>
+                <option>So I told her</option>
+                <option>We'd still be friends</option>
+                <option>Then we made our true love vow</option>
+                <option>Wonder what she's doin' now</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>Angels</short_answer>
+            <long_answer/>
+            <options>
+                <option>I sit and wait</option>
+                <option>Does an angel</option>
+                <option>Contemplate my fate</option>
+                <option>And do they know</option>
+                <option>The places where we go</option>
+                <option>When we're grey and old</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>I Want It That Way</short_answer>
+            <long_answer/>
+            <options>
+                <option>You Are</option>
+                <option>My Fire</option>
+                <option>The one desire</option>
+                <option>Believe</option>
+                <option>When I say</option>
+                <option>I want it that way</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>Mr Brightside</short_answer>
+            <long_answer/>
+            <options>
+                <option>Now they're going to bed</option>
+                <option>And my stomach is sick</option>
+                <option>And it's all in my head</option>
+                <option>But she's touching his chest now</option>
+                <option>He takes off her dress now</option>
+                <option>Let me go</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>I Will Survive</short_answer>
+            <long_answer/>
+            <options>
+                <option>At first</option>
+                <option>I was afraid</option>
+                <option>I was petrified</option>
+                <option>Kept thinking</option>
+                <option>I could never live</option>
+                <option>Without you by my side</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>My Way</short_answer>
+            <long_answer/>
+            <options>
+                <option>Regrets, I've had a few</option>
+                <option>But then again</option>
+                <option>Too few to mention</option>
+                <option>I did what I had to do</option>
+                <option>And saw it through</option>
+                <option>Without exemption</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>Mamma Mia</short_answer>
+            <long_answer/>
+            <options>
+                <option>I've been cheated by you</option>
+                <option>Since I don't know when</option>
+                <option>So I made up my mind</option>
+                <option>It must come to an end</option>
+                <option>Look at me now</option>
+                <option>Will I ever learn</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>Livin La Vida Loca</short_answer>
+            <long_answer/>
+            <options>
+                <option>She's into superstitions</option>
+                <option>Black cats</option>
+                <option>and voodoo dolls</option>
+                <option>I feel a premonition</option>
+                <option>That girl's</option>
+                <option>gonna make me fall</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>Shallow</short_answer>
+            <long_answer/>
+            <options>
+                <option>I'm off the deep end</option>
+                <option>Watch as I dive in</option>
+                <option>I'll never meet the ground</option>
+                <option>Crash through the surface</option>
+                <option>Where they can't hurt us</option>
+                <option>We're far from the shallow now</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>Let It Go</short_answer>
+            <long_answer/>
+            <options>
+                <option>The snow glows white</option>
+                <option>On the mountain tonight</option>
+                <option>Not a footprint to be seen</option>
+                <option>A kingdom of isolation</option>
+                <option>And it looks like</option>
+                <option>I'm the queen</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>Valerie</short_answer>
+            <long_answer/>
+            <options>
+                <option>Well sometimes</option>
+                <option>I go out by myself</option>
+                <option>And I look across the water</option>
+                <option>And I think of all the things</option>
+                <option>What you're doing</option>
+                <option>And in my head I paint a picture</option>
+            </options>
+        </question>
+        <question>
+            <user_view>sequence</user_view>
+            <q>Put these song lyrics in order?</q>
+            <short_answer>No Scrubs</short_answer>
+            <long_answer/>
+            <options>
+                <option>I don't want no scrub</option>
+                <option>A scrub is a guy</option>
+                <option>That can't get no love from me</option>
+                <option>Hangin' out the passenger side</option>
+                <option>Of his best friend's ride</option>
+                <option>Trying to holla at me</option>
+            </options>
+        </question>
+    </questions>
+</round>

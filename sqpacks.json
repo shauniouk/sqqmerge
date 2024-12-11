@@ -1,0 +1,213 @@
+{
+    "menu": [
+      {
+        "name": "Pictures",
+        "description": "Picture Based Packs",
+        "submenu": [
+          {
+            "name": "Celebrities",
+            "submenu": [
+              {
+                "name": "Caricatures",
+                "onclick": "fetchPackXML('mypacks/pictures/','Caricatures.sqq');"
+              },
+              {
+                "name": "Mugshots",
+                "onclick": "fetchPackXML('mypacks/pictures/','Celebrity Mugshots.sqq');"
+              }
+            ]
+          },
+          {
+            "name": "Childrens",
+            "submenu": [
+              {
+                "name": "Mr Men",
+                "onclick": "fetchPackXML('mypacks/pictures/Childrens/','Mr Men.sqq');"
+              }
+            ]
+          },
+          {
+            "name": "Countries",
+            "submenu": [
+              {
+                "name": "Flags",
+                "onclick": "fetchPackXML('mypacks/pictures/','Country Flags.sqq');"
+              },
+              {
+                "name": "Shapes",
+                "onclick": "fetchPackXML('mypacks/pictures/','Country Shapes.sqq');"
+              }
+            ]
+          },
+          {
+            "name": "Logos",
+            "submenu": [
+              {
+                "name": "Companies",
+                "onclick": "fetchPackXML('mypacks/pictures/logos/','Company Logos.sqq');"
+              },
+              {
+                "name": "Cars",
+                "onclick": "fetchPackXML('mypacks/pictures/logos/','Car Logos.sqq');"
+              }
+            ]
+          },
+          {
+            "name": "Movies",
+            "submenu": [
+              {
+                "name": "Action",
+                "onclick": "fetchPackXML('mypacks/pictures/movies/','Action Movies.sqq');"
+              },
+              {
+                "name": "Comedy",
+                "onclick": "fetchPackXML('mypacks/pictures/movies/','Comedy Movies.sqq');"
+              },
+              {
+                "name": "Drama",
+                "onclick": "fetchPackXML('mypacks/pictures/movies/','Drama Movies.sqq');"
+              },
+              {
+                "name": "Family",
+                "onclick": "fetchPackXML('mypacks/pictures/movies/','Family Movies.sqq');"
+              },
+              {
+                "name": "Horror",
+                "onclick": "fetchPackXML('mypacks/pictures/movies/','Horror Movies.sqq');"
+              },
+              {
+                "name": "Musical",
+                "onclick": "fetchPackXML('mypacks/pictures/movies/','Musical Movies.sqq');"
+              },
+              {
+                "name": "Science Fiction",
+                "onclick": "fetchPackXML('mypacks/pictures/movies/','Science Fiction Movies.sqq');"
+              },
+              {
+                "name": "Thriller",
+                "onclick": "fetchPackXML('mypacks/pictures/movies/','Thriller Movies.sqq');"
+              },
+              {
+                "name": "War",
+                "onclick": "fetchPackXML('mypacks/pictures/movies/','War Movies.sqq');"
+              }
+            ]
+          },
+          {
+            "name": "Music",
+            "submenu": [
+              {
+                "name": "Album Covers",
+                "onclick": "fetchPackXML('mypacks/pictures/','Album Covers.sqq');"
+              }
+            ]
+          },
+          {
+            "name": "People",
+            "submenu": [
+              {
+                "name": "Celebrities",
+                "onclick": "fetchPackXML('mypacks/pictures/people/','People-Celebrity.sqq');"
+              },
+              {
+                "name": "Musicians",
+                "onclick": "fetchPackXML('mypacks/pictures/people/','People-Music.sqq');"
+              },
+              {
+                "name": "Politics",
+                "onclick": "fetchPackXML('mypacks/pictures/people/','People-Politics.sqq');"
+              },
+              {
+                "name": "Sports",
+                "submenu": [
+                  {
+                    "name": "Athletics",
+                    "onclick": "fetchPackXML('mypacks/pictures/people/','People-Sport-Athletics.sqq');"
+                  },
+                  {
+                    "name": "Basketball",
+                    "onclick": "fetchPackXML('mypacks/pictures/people/','People-Sport-Basketball.sqq');"
+                  },
+                  {
+                    "name": "Boxing",
+                    "onclick": "fetchPackXML('mypacks/pictures/people/','People-Sport-Boxing.sqq');"
+                  },
+                  {
+                    "name": "Darts",
+                    "onclick": "fetchPackXML('mypacks/pictures/people/','People-Sport-Darts.sqq');"
+                  },
+                  {
+                    "name": "Football",
+                    "onclick": "fetchPackXML('mypacks/pictures/people/','People-Sport-Football.sqq');"
+                  },
+                  {
+                    "name": "Formula 1",
+                    "onclick": "fetchPackXML('mypacks/pictures/people/','People-Sport-Formula1.sqq');"
+                  },
+                  {
+                    "name": "Golf",
+                    "onclick": "fetchPackXML('mypacks/pictures/people/','People-Sport-Golf.sqq');"
+                  },
+                  {
+                    "name": "Tennis",
+                    "onclick": "fetchPackXML('mypacks/pictures/people/','People-Sport-Tennis.sqq');"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Letters",
+        "description": "Letter Question Packs",
+        "submenu": [
+          {
+            "name": "Geography",
+            "submenu": [
+              {
+                "name": "Capital Cities",
+                "onclick": "fetchPackXML('mypacks/letters/','Capital Cities.sqq');"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sequences",
+        "description": "Sequence Based Packs",
+        "submenu": [
+          {
+            "name": "Song Lyrics",
+            "onclick": "fetchPackXML('mypacks/sequences/','Song Lyrics Sequence.sqq');"
+          }
+        ]
+      },
+      {
+        "name": "Themes",
+        "description": "Theme Based Packs",
+        "submenu": [
+          {
+            "name": "Halloween",
+            "submenu": [
+                  {
+                    "name": "Horror Movie Characters",
+                    "onclick": "fetchPackXML('mypacks/Halloween/','Horror Movie Characters.sqq');"
+                  }
+                ]
+          }
+        ]
+      },
+      {
+        "name": "Music Round",
+        "description": "Templates For Music Round",
+        "submenu": [
+          {
+                    "name": "Template Questions",
+                    "onclick": "fetchPackXML('mypacks/musicround/','Music Round Templates.sqq');"
+          }
+        ]
+      }
+    ]
+  }
+  

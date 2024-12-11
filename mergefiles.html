@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQQ File Pack Merger</title>
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="packfolder.gif">
+	<script src="sqqmerge1.6.js"></script>
+	<link rel="stylesheet" type="text/css" href="sqqmerge1.5.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<div>
+			<div style="font-weight: bold; font-size: 1.25rem; padding: 0px; margin-bottom: 5px; color: white;">
+				Packs
+			</div>
+
+			<nav id="dynamic-menu"></nav>
+
+		</div>
+
+		<div class="contgen">
+			<!--<input type="file" id="xmlFileInput" accept=".sqq" onchange="loadXML()" />-->
+			
+			<div style="display: flex; gap: 10px;">
+				<div style="padding: 5px; ">
+					<button style="width:120px; height:20px;" onclick="document.getElementById('xmlFileInput').click()">Load .SQQ File</button>
+					<input type='file' id="xmlFileInput" style="display:none" accept=".sqq" onchange="loadXML()" />
+				</div>
+
+			</div>
+			
+			<div class="loadedpacks">
+				<table id="sqqpacks">
+					<tr class="header">
+						<td style="width: 40px">Type</td>
+						<td style="width: 650px">Question</td>
+						<td style="width: 25px;"></td>
+						<td style="width: 25px;"></td>
+					</tr>
+				</table>
+			</div>
+		</div>	
+		
+		<div class="contgen">
+			<div style="display: flex; flex-direction: column; align-items: center;">
+				<div id="qheader" class="txt-bold txt-white txt-large pad-2">Question</div>
+				<div id="qtype" class="txt-bold txt-black pad-2 txt-center widthp95 mrg-b-5">TYPE</div>
+				<div id="qanswer">
+					<table style="border: 1px solid black; width: 350px; height: 290px; background-color: white;">
+						<tr style="vertical-align: top;">
+							<td style="width: 100px; height: 80px;"><b>Question:</b></td>
+							<td id="qd-question" contenteditable="true"></td>
+							<td style="width: 2px;"></td>
+						</tr>
+						<tr style="vertical-align: top;">
+							<td style="height: 25px;"><b>Short Answer:</b></td>
+							<td id="qd-short" contenteditable="true"></td>
+							<td></td>
+						</tr>
+						<tr style="vertical-align: top;">
+							<td style="height: 60px;"><b>Long Answer:</b></td>
+							<td id="qd-long" contenteditable="true"></td>
+							<td></td>
+						</tr>
+						<tr style="height: 90px; vertical-align: top;">
+							<td><b>Options:</b></td>
+							<td id="qd-options"></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div id="qd-add" style="width: 100%; padding-right: 4px; display: flex; justify-content: flex-end;">
+					<a style="color: white; text-decoration: none;" href=# onclick='addQuestionToNewPack(this);'>add to new pack</a>
+				</div>
+				<div id="qpicheader" class="txt-bold txt-white txt-large pad-2">Picture</div>
+				<div id="qpicture" style="border: 1px solid black;">
+					<img id="qpic" style="width: 320px; height: 460px; background-color: silver;" />
+				</div>
+			</div>
+		</div>
+			
+		<div class="contgen">	
+			<div style="padding: 5px;">
+				<div style="float: left; width: 150px;">
+					<a class="download" href="#" onclick="downloadSQQFile('generated pack','');">Download SQQ Pack</a>					
+				</div>
+				<input style="width: 260px; margin-right: 20px;" type="text" name="name" value="My Pack Name" id="packname">	
+					<b style="color: white;">Question Count: </b><span style="color: white;" id="qcount">0</span>
+			</div>
+		
+			<div class="loadedpacks">
+				<table id="sqqcreate">
+					<tr class="header">
+						<td style="width: 40px">type</td>
+						<td style="width: 625px">question</td>
+						<td style="width: 25px;"></td>
+						<td style="width: 25px;"></td>
+						<td style="width: 25px;"></td>
+						<td style="width: 25px;"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<script> 
+		function createMenu(menuData, parentElement) {
+			const ul = document.createElement('ul');
+			ul.className = 'mcd-menu';
+		
+			menuData.forEach(item => {
+				const li = document.createElement('li');
+				const a = document.createElement('a');
+				
+				if (item.onclick) {
+					a.href = '#';
+					a.onclick = new Function(item.onclick);
+
+				} else {
+					a.href = '#';
+					a.style.fontWeight = 'bold';
+				}
+		
+				if (item.description) {
+					a.innerHTML = `<strong>${item.name}</strong><small>${item.description}</small>`;
+				} else {
+					if (item.onclick) {
+						a.innerHTML = `<div style="display: flex; align-items:center;"><img src="sqfile.svg" style="width: 22px; padding-right: 5px;" />${item.name}</div>`;
+					} else {
+						a.innerHTML = `<div style="display: flex; align-items:center;"><img src="folder.svg" style="width: 22px; padding-right: 5px;" />${item.name}</div>`;
+					}
+				}
+		
+
+				li.appendChild(a);
+		
+				if (item.submenu) {
+					createMenu(item.submenu, li);
+				}
+		
+				ul.appendChild(li);
+			});
+		
+			parentElement.appendChild(ul);
+		}
+		
+		fetch('sqpacks.json')
+			.then(response => response.json())
+			.then(data => {
+				const menuContainer = document.getElementById('dynamic-menu');
+				createMenu(data.menu, menuContainer);
+			})
+			.catch(error => console.error('Error loading menu:', error));
+
+		document.getElementById('qd-question').addEventListener('input', function() {
+			const questionDiv = document.getElementById('qd-add');
+			if (questionDiv.dataxml) {
+				const parser = new DOMParser();
+				const xmlDoc = parser.parseFromString(questionDiv.dataxml, 'text/xml');
+				const qAnswerElement = xmlDoc.querySelector('q');
+				if (qAnswerElement) {
+					qAnswerElement.textContent = this.textContent;
+					questionDiv.dataxml = new XMLSerializer().serializeToString(xmlDoc);
+				}
+			}
+		});
+
+		document.getElementById('qd-short').addEventListener('input', function() {
+			const questionDiv = document.getElementById('qd-add');
+
+			if (questionDiv.dataxml) {
+				const parser = new DOMParser();
+				const xmlDoc = parser.parseFromString(questionDiv.dataxml, 'text/xml');
+				const shortAnswerElement = xmlDoc.querySelector('short_answer');
+				if (shortAnswerElement) {
+
+					if (getCurrentQuestionType() == "LETTERS") {
+						this.textContent = this.textContent.charAt(0).toUpperCase();
+					} 
+					shortAnswerElement.textContent = this.textContent;
+
+					questionDiv.dataxml = new XMLSerializer().serializeToString(xmlDoc);
+				}
+			}
+		});
+
+		document.getElementById('qd-long').addEventListener('input', function() {
+			const questionDiv = document.getElementById('qd-add');
+			if (questionDiv.dataxml) {
+				const parser = new DOMParser();
+				const xmlDoc = parser.parseFromString(questionDiv.dataxml, 'text/xml');
+				const longAnswerElement = xmlDoc.querySelector('long_answer');
+				if (longAnswerElement) {
+					longAnswerElement.textContent = this.textContent;
+					questionDiv.dataxml = new XMLSerializer().serializeToString(xmlDoc);
+				}
+			}
+		});
+
+		function getCurrentQuestionType() {
+			const questionType = document.getElementById('qtype').innerHTML;
+			return questionType;
+		}
+
+		</script>
+
+</body>
+</html>
+
+
