@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Music Round Creator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f172a;           /* slate-900 */
+      --panel: #111827;        /* gray-900 */
+      --muted: #94a3b8;        /* slate-400 */
+      --text: #e5e7eb;         /* gray-200 */
+      --accent: #22d3ee;       /* cyan-400 */
+      --accent-2: #38bdf8;     /* sky-400 */
+      --border: #1f2937;       /* gray-800 */
+      --danger: #ef4444;       /* red-500 */
+      --ok: #22c55e;           /* green-500 */
+    }
+    html, body {
+      height: 100%;
+      background: linear-gradient(135deg, #0b1020 0%, #0f172a 50%, #0b1020 100%);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      margin: 0;
+    }
+    .wrap {
+      max-width: 95%;
+      margin: 5px auto;
+      padding: 0 16px;
+    }
+    header {
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      margin-bottom: 5px;
+    }
+    h1 { font-size: 1.4rem; margin: 0; letter-spacing: .3px; }
+    .sub { color: var(--muted); font-size: .95rem; }
+
+    .toolbar {
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 2px;
+      border-radius: 14px;
+    }
+    .filepick {
+      display:flex; align-items:center; gap:10px;
+      background: var(--panel);
+      border: 1px dashed var(--border);
+      padding: 2px 3px;
+      border-radius: 12px;
+    }
+    .filepick input[type="file"] {
+      color: var(--muted);
+      max-width: 300px;
+    }
+    .btn {
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #0b1220, #0b1322);
+      color: var(--text);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: transform .05s ease, box-shadow .2s ease, border-color .2s ease;
+      box-shadow: 0 0 0 0 rgba(0,0,0,0);
+      user-select: none;
+    }
+    .btn:hover { border-color: #243244; box-shadow: 0 6px 16px rgba(0,0,0,.25); }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { border-color: #1f9bd1; background: linear-gradient(180deg, #0b2a3a, #0a2230); }
+    .btn.danger { border-color: #8b1c1c; background: linear-gradient(180deg, #2a0b0b, #220a0a); font-size: 0.75em;}
+
+    .limit {
+      margin-left: auto;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .limit.ok { color: var(--ok); }
+    .limit.warn { color: var(--danger); }
+
+    .dropzone {
+      border: 2px dashed var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+      color: var(--muted);
+      background: rgba(255,255,255,0.02);
+    }
+    .dropzone.highlight {
+      border-color: var(--accent);
+      color: var(--accent-2);
+      background: rgba(34, 211, 238, 0.06);
+    }
+
+    ol#list {
+      list-style: none;
+      padding: 0;
+      margin: 5px 0 24px;
+      display: grid;
+      gap: 10px;
+    }
+    .item {
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 2px;
+      border: 1px solid var(--border);
+      background: #0c1424;
+      border-radius: 14px;
+    }
+    .handle {
+      cursor: grab;
+      background: #0a1020;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      width: 24px; height: 24px;
+      display: grid; place-items: center;
+      font-size: 18px;
+      user-select: none;
+    }
+    .item.dragging { opacity: .6; }
+    .meta {
+      display:flex; 
+      flex-direction:row; 
+      justify-content: space-between;
+      gap:4px; 
+      min-width: 0;
+    }
+    .metain {
+      display:flex; 
+      flex-direction:row; 
+      justify-content: space-between;
+      gap:4px; 
+      min-width: 100px;
+      padding-right: 10px;
+    }
+    .qtype {
+      font-size: .75rem; 
+      color: var(--accent);
+      font-weight: 600;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      border-radius: 4px;
+        border: 1px solid var(--accent-2);
+        width: 70px;
+        text-align: center;
+        background-color: var(--panel);
+    }
+    .qtypea {
+      font-size: .75rem; 
+      color: #22d3ee;
+      font-weight: 600;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      border-radius: 4px;
+        border: 1px solid var(--accent-2);
+        width: 70px;
+        text-align: center;
+        background-color: #143271;
+    }
+    .qtypet {
+      font-size: .75rem; 
+      color: #ef9090;
+      font-weight: 600;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      border-radius: 4px;
+        border: 1px solid var(--accent-2);
+        width: 70px;
+        text-align: center;
+        background-color: #5b0e0e;
+    }
+    .qtypen {
+      font-size: .75rem; 
+      color: #40df81;
+      font-weight: 600;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      border-radius: 4px;
+        border: 1px solid var(--accent-2);
+        width: 70px;
+        text-align: center;
+        background-color: #11472b;
+    }
+    .qtypey {
+      font-size: .75rem; 
+      color: #e0ee22;
+      font-weight: 600;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      border-radius: 4px;
+        border: 1px solid var(--accent-2);
+        width: 70px;
+        text-align: center;
+        background-color: #41450d;
+    }
+    .name {
+      font-weight: 600;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .note {
+      font-size: .9rem; color: var(--muted);
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    audio { width: 175px; height: 24px;}
+    .actions { display:flex; gap: 8px; }
+    .tag {
+      border: 1px solid var(--border);
+      padding: 2px 8px; border-radius: 999px;
+      font-size: .8rem; color: var(--muted);
+    }
+    .empty {
+      color: var(--muted);
+      border: 1px dashed var(--border);
+      background: rgba(255,255,255,0.02);
+      padding: 20px; border-radius: 14px; text-align:center;
+    }
+    footer {
+      display:flex; justify-content: space-between; align-items: center; gap: 10px;
+      color: var(--muted);
+    }
+    @media (max-width: 640px) {
+      .item { grid-template-columns: 36px 1fr; grid-template-rows: auto auto; }
+      audio { grid-column: 1 / -1; width: 100%; }
+      .actions { grid-column: 1 / -1; justify-content: flex-end; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Music Round Creator</h1>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <div class="filepick">
+        <label class="btn" for="fileInput">Select files</label>
+        <input hidden id="fileInput" type="file" accept=".mp3,audio/mpeg" multiple webkitdirectory directory /> 
+        <span class="tag">Folder selection supported</span>
+      </div>
+      <button id="clearBtn" class="btn">Clear list</button>
+      <button id="exportBtn" class="btn primary">Export</button>
+      <div id="limit" class="limit">0 / 25 selected</div>
+
+      <div id="dropzone" class="dropzone" aria-label="Drop files here">
+        Or drop up to 25 MP3s here
+      </div>
+    </section>
+
+    <ol id="list" aria-live="polite"></ol>
+    <div id="empty" class="empty">No files yet. Use “Select files” or drop them above.</div>
+
+    <footer>
+      <small>Note: Browsers cannot read full file paths for security—playlist will use filenames.</small>
+      <small>Tip: Hold the mouse on the handle to drag; use the audio player to preview.</small>
+    </footer>
+  </div>
+
+  <script>
+  (function(){
+    const MAX = 25;
+    const fileInput = document.getElementById('fileInput');
+    const listEl = document.getElementById('list');
+    const emptyEl = document.getElementById('empty');
+    const limitEl = document.getElementById('limit');
+    const clearBtn = document.getElementById('clearBtn');
+    const exportBtn = document.getElementById('exportBtn');
+    const dropzone = document.getElementById('dropzone');
+
+    /** Internal state: array of {id, file, url, name, size} */
+    let items = [];
+
+    function updateLimit() {
+      const cls = items.length <= MAX ? 'ok' : 'warn';
+      limitEl.className = 'limit ' + cls;
+      limitEl.textContent = `${Math.min(items.length, MAX)} / ${MAX} selected`;
+    }
+
+    function setEmptyVisible(v) {
+      emptyEl.style.display = v ? 'block' : 'none';
+    }
+
+    function reset() {
+      // Revoke URLs to avoid leaks
+      items.forEach(x => x.url && URL.revokeObjectURL(x.url));
+      items = [];
+      listEl.innerHTML = '';
+      setEmptyVisible(true);
+      updateLimit();
+    }
+
+    function sanitizeToMp3(fileList) {
+      // Filter, sort by name, dedupe by name+size, and cap at MAX
+      const files = Array.from(fileList || []).filter(f =>
+        f && f.type ? f.type === 'audio/mpeg' : /\.mp3$/i.test(f.name)
+      );
+
+      // prevent adding beyond MAX
+      const spaceLeft = Math.max(0, MAX - items.length);
+      const take = files.slice(0, spaceLeft);
+
+      // simple de-dupe against already-added names+sizes
+      const existingKeys = new Set(items.map(it => `${it.name}|${it.size}`));
+      const fresh = take.filter(f => !existingKeys.has(`${f.name}|${f.size}`));
+
+      return fresh;
+    }
+
+    function addFiles(fileList) {
+      const fresh = sanitizeToMp3(fileList);
+      if (fresh.length === 0) {
+        updateLimit();
+        return;
+      }
+      setEmptyVisible(false);
+
+      for (const f of fresh) {
+        const id = crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random());
+        const url = URL.createObjectURL(f);
+        const entry = { id, file: f, url, name: f.name, size: f.size, qtype: '', qanswer: '', longanswer: '' };
+        items.push(entry);
+        listEl.appendChild(renderItem(entry, items.length));
+      }
+      updateLimit();
+    }
+
+    function renderItem(entry, index) {
+      const li = document.createElement('li');
+      li.className = 'item';
+      li.setAttribute('data-id', entry.id);
+      li.setAttribute('draggable', 'true');
+
+      const handle = document.createElement('div');
+      handle.className = 'handle';
+      handle.setAttribute('title', 'Drag to reorder');
+      handle.textContent = '⋮⋮';
+
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      const name = document.createElement('div');
+      name.className = 'name';
+      name.textContent = entry.name;
+
+        const metain = document.createElement('div');
+        metain.className = 'metain';
+
+        const questiontype = document.createElement('div');
+        const types = ["Artist", "Title", "Next Word", "Year"];
+        let typeIndex = 0;
+        questiontype.className = 'qtypea';
+        questiontype.textContent = types[typeIndex];
+        questiontype.style.cursor = "pointer";
+        questiontype.title = "Click to change type";
+        questiontype.addEventListener("click", () => {
+          typeIndex = (typeIndex + 1) % types.length;
+          questiontype.textContent = types[typeIndex];
+          setQType(entry.id, questiontype.textContent);
+          const typeappend = questiontype.textContent.slice(0,1).toLowerCase();
+          questiontype.className = 'qtype' + typeappend;
+        });
+        entry.qtype = 'Artist';
+
+        const questionanswer = document.createElement('input');
+        questionanswer.type = 'text';
+        questionanswer.maxLength = 4;
+        questionanswer.className = 'qtype';
+        questionanswer.placeholder = '-';
+        questionanswer.style.textAlign = 'center';
+        questionanswer.style.width = '48px';
+        questionanswer.style.color = '#fcff96';
+        questionanswer.title = 'Enter a single uppercase letter or number';
+        questionanswer.addEventListener('input', (e) => {
+          let v = e.target.value.toUpperCase();
+          if (/^\d{0,4}$/.test(v)) {
+            // Allow up to 4 digits
+            v = v.slice(0, 4);
+          } else if (/^[A-Z]$/.test(v)) {
+            // Allow only a single uppercase letter
+            v = v.slice(0, 1);
+          } else {
+            // Remove invalid characters
+            v = v.replace(/[^A-Z0-9]/g, '');
+            if (/^\d/.test(v)) {
+              v = v.replace(/[^0-9]/g, '').slice(0, 4);
+            } else {
+              v = v.replace(/[^A-Z]/g, '').slice(0, 1);
+            }
+          }
+          e.target.value = v;
+          setQAnswer(entry.id, v);
+        });
+        entry.qanswer = entry.name.slice(0, 1).toUpperCase();
+        questionanswer.value = entry.name.slice(0, 1).toUpperCase();
+
+        const longanswer = document.createElement('input');
+        longanswer.type = 'search';
+        longanswer.className = 'qtype';
+        longanswer.style.width = '250px';
+        longanswer.style.color = '#fcff96';
+        longanswer.style.fontSize = '0.75em';
+        longanswer.value = entry.name.replace(/\.mp3$/i, '');
+        entry.longanswer = longanswer.value;
+        longanswer.addEventListener('input', () => {
+            setLongAnswer(entry.id, longanswer.value);
+            });
+
+        metain.appendChild(questiontype);
+        metain.appendChild(questionanswer);
+        metain.appendChild(longanswer);
+
+      //const note = document.createElement('div');
+      //note.className = 'note';
+      //note.textContent = formatBytes(entry.size);
+      meta.appendChild(name);
+      meta.appendChild(metain);
+      //meta.appendChild(note);
+
+      const actions = document.createElement('div');
+      actions.className = 'actions';
+
+      const audio = document.createElement('audio');
+      audio.controls = true;
+      audio.controlsList = 'nodownload noplaybackrate';
+      audio.src = entry.url;
+      audio.preload = 'metadata';
+      audio.setAttribute('aria-label', `Preview ${entry.name}`);
+
+      const removeBtn = document.createElement('button');
+      removeBtn.className = 'btn danger';
+      removeBtn.textContent = 'Remove';
+      removeBtn.addEventListener('click', () => removeItem(entry.id));
+
+      actions.appendChild(audio);
+      actions.appendChild(removeBtn);
+
+      li.appendChild(handle);
+      li.appendChild(meta);
+      li.appendChild(actions);
+
+      // Drag events
+      li.addEventListener('dragstart', (e) => {
+        li.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', entry.id);
+      });
+      li.addEventListener('dragend', () => li.classList.remove('dragging'));
+      li.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        const dragging = document.querySelector('.item.dragging');
+        if (!dragging || dragging === li) return;
+
+        const rect = li.getBoundingClientRect();
+        const before = (e.clientY - rect.top) < rect.height / 2;
+        const container = listEl;
+        if (before) container.insertBefore(dragging, li);
+        else container.insertBefore(dragging, li.nextSibling);
+      });
+      li.addEventListener('drop', (e) => {
+        e.preventDefault();
+        reorderStateFromDOM();
+      });
+
+      return li;
+    }
+
+    function reorderStateFromDOM() {
+      const ids = Array.from(listEl.querySelectorAll('.item')).map(el => el.getAttribute('data-id'));
+      const map = new Map(items.map(x => [x.id, x]));
+      items = ids.map(id => map.get(id)).filter(Boolean);
+    }
+
+    function setQType(id, qtype) {
+      const entry = items.find(x => x.id === id);
+      if (entry) entry.qtype = qtype;
+    }
+
+    function setQAnswer(id, qanswer) {
+      const entry = items.find(x => x.id === id);
+      if (entry) entry.qanswer = qanswer;
+    }
+
+    function setLongAnswer(id, longanswer) {
+      const entry = items.find(x => x.id === id);
+      if (entry) entry.longanswer = longanswer;
+    }
+
+    function removeItem(id) {
+      const idx = items.findIndex(x => x.id === id);
+      if (idx >= 0) {
+        URL.revokeObjectURL(items[idx].url);
+        items.splice(idx, 1);
+        const el = listEl.querySelector(`.item[data-id="${id}"]`);
+        if (el) el.remove();
+      }
+      if (items.length === 0) setEmptyVisible(true);
+      updateLimit();
+    }
+
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 B';
+      const k = 1024;
+      const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return `${(bytes / Math.pow(k, i)).toFixed(2)} ${sizes[i]}`;
+    }
+
+    // Input change
+    fileInput.addEventListener('change', (e) => {
+      addFiles(e.target.files);
+      // reset the input so the same selection can be added again if cleared
+      fileInput.value = '';
+    });
+
+    // Dropzone
+    ['dragenter', 'dragover'].forEach(ev =>
+      dropzone.addEventListener(ev, (e) => {
+        e.preventDefault(); e.stopPropagation();
+        dropzone.classList.add('highlight');
+      })
+    );
+    ['dragleave', 'drop'].forEach(ev =>
+      dropzone.addEventListener(ev, (e) => {
+        e.preventDefault(); e.stopPropagation();
+        dropzone.classList.remove('highlight');
+      })
+    );
+    dropzone.addEventListener('drop', (e) => {
+      const dt = e.dataTransfer;
+      if (dt && dt.files) addFiles(dt.files);
+    });
+
+    // Buttons
+    clearBtn.addEventListener('click', reset);
+
+    exportBtn.addEventListener('click', () => {
+        if (items.length === 0) return;
+
+        createMusicHTML();
+        createSQQFile();
+        
+    });
+
+    function createMusicHTML() {
+        const lines = ['<!DOCTYPE html><html><title>Audio Clips For Quiz</title><head><style>',
+            'body {	margin: 0px;}audio {height: 30px;}div {width:300px;}',
+            'div.header {background-color: #1b236e; color: #ffffff;font: 9pt tahoma;height: 15px;text-align: center;}',
+            'div.music {margin-bottom: 2px;background-color: #1b236e;</style></head><body>'];
+
+        for (const item of items) {
+            lines.push('<div class="header">' + (items.indexOf(item) + 1) + ' - ' + item.longanswer + '</div><div class="music"><audio controls>  <source src="' + item.name + '" type="audio/mpeg"></audio></div>');
+        }
+
+        lines.push('</body></html>');
+
+      const blob = new Blob([lines.join('\n')], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'music.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    function createSQQFile() {
+        const lines = ['<?xml version="1.0" encoding="utf-8"?><round><game>Quizsentials</game><title>Generated from SQQM - 08/03/24</title>',
+            '<points_per_question>4</points_per_question><go_wide>false</go_wide><speed_bonus>true</speed_bonus><questions>'];
+
+        for (const item of items) {
+            switch (item.qtype) {
+                case 'Artist':
+                    lines.push('<question><user_view>letters</user_view><q>Name the artist?</q><short_answer>' + item.qanswer + '</short_answer><long_answer>' + item.longanswer + '</long_answer></question>');
+                    break;
+                case 'Title':
+                    lines.push('<question><user_view>letters</user_view><q>Name the song?</q><short_answer>' + item.qanswer + '</short_answer><long_answer>' + item.longanswer + '</long_answer></question>');
+                    break;
+                case 'Next Word':
+                    lines.push('<question><user_view>letters</user_view><q>The next word is?</q><short_answer>' + item.qanswer + '</short_answer><long_answer>' + item.longanswer + '</long_answer></question>');
+                    break;
+                case 'Year':
+                    lines.push('<question><user_view>numbers</user_view><q>Name the year?</q><short_answer>' + item.qanswer + '</short_answer><long_answer>' + item.longanswer + '</long_answer></question>');
+                    break;
+                default:
+                    item.qtype = '';
+            }
+         
+        }
+
+        lines.push('</questions></round>');
+
+    const blob = new Blob([lines.join('\n')], { type: 'text/xml' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'music.sqq';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+    }
+
+
+    // Initial UI
+    reset();
+        })();
+  </script>
+</body>
+</html>

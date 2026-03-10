@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Usage Viewer</title>
+    <link rel="stylesheet" href="musicusage-1.0.css">
+</head>
+<body>
+    <div class="container">
+        <div id="error-message" class="error" style="display: none;"></div>
+       
+        <div class="controls">
+            <div class="control-group">
+                <label for="search">Search Artist or Title</label>
+                <input type="text" id="search" placeholder="Search by artist or title...">
+            </div>
+            <div class="control-group">
+                <label for="venue-filter">Filter by Venue</label>
+                <select id="venue-filter">
+                    <option value="">All Venues</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="date-filter">Filter by Date</label>
+                <input type="date" id="date-filter" />
+            </div>
+        </div>
+
+        <div class="week-heatmap-container" id="week-heatmap"></div>
+
+        <div class="stats" id="stats"></div>
+
+        <table class="tracks-table">
+            <thead>
+                <tr>
+                    <th class="sortable" data-column="artist">Artist</th>
+                    <th class="sortable" data-column="title">Title</th>
+                    <th class="sortable" data-column="venues">Venues</th>
+                </tr>
+            </thead>
+            <tbody id="tracks-body">
+                <tr>
+                    <td colspan="3" class="no-results">Loading music...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let alltracks = [];
+        let filteredtracks = [];
+        let currentSort = { column: null, direction: null };
+        let selectedWeek = null; // Track the selected week for heatmap
+
+        // Get ISO week number from date
+        function getWeekNumber(dateNum) {
+            const dateStr = dateNum.toString();
+            const year = parseInt(dateStr.substring(0, 4));
+            const month = parseInt(dateStr.substring(4, 6)) - 1;
+            const day = parseInt(dateStr.substring(6, 8));
+            
+            const date = new Date(year, month, day);
+            const start = new Date(date.getFullYear(), 0, 1);
+            const diff = date - start;
+            const millisecondsPerDay = 86400000;
+            const dayOfYear = Math.floor(diff / millisecondsPerDay) + 1;
+            
+            // ISO 8601 week number
+            const weekNum = Math.ceil((dayOfYear + new Date(date.getFullYear(), 0, 1).getDay() + 1) / 7);
+            return Math.max(1, weekNum);
+        }
+
+        // Get year from date
+        function getYearFromDate(dateNum) {
+            return parseInt(dateNum.toString().substring(0, 4));
+        }
+
+        // Build heatmap data structure
+        function buildHeatmapData() {
+            const heatmapData = {
+                2023: {},
+                2024: {},
+                2025: {},
+                2026: {}
+            };
+
+            // For each track, mark which weeks have activity
+            alltracks.forEach(track => {
+                if (track.venue && track.dateused) {
+                    const year = getYearFromDate(track.dateused);
+                    const week = getWeekNumber(track.dateused);
+                    if (heatmapData[year]) {
+                        if (!heatmapData[year][week]) {
+                            heatmapData[year][week] = [];
+                        }
+                        heatmapData[year][week].push({
+                            venue: track.venue,
+                            date: track.dateused
+                        });
+                    }
+                }
+            });
+
+            return heatmapData;
+        }
+
+        // Render the week heatmap
+        function renderHeatmap() {
+            const container = document.getElementById('week-heatmap');
+            const heatmapData = buildHeatmapData();
+            let html = '';
+
+            // Get selected venue
+            const venueFilter = document.getElementById('venue-filter').value;
+
+            for (let year of [2023, 2024, 2025, 2026]) {
+                html += `<div class="year-row">
+                    <div class="week-grid" data-year="${year}">
+                        <div class="year-label">${year}</div>`;
+
+                const weeksInYear = year % 4 === 0 ? 53 : 52; // Simple leap year logic for weeks
+
+                for (let week = 1; week <= weeksInYear; week++) {
+                    const weekData = heatmapData[year][week];
+                    // Only show activity for selected venue (or all venues if none selected)
+                    let filteredWeekData = weekData;
+                    if (venueFilter && weekData) {
+                        filteredWeekData = weekData.filter(item => item.venue === venueFilter);
+                    }
+                    const hasActivity = filteredWeekData && filteredWeekData.length > 0;
+                    const activeClass = hasActivity ? 'active' : '';
+                    const selectedClass = selectedWeek && selectedWeek.year === year && selectedWeek.week === week ? 'selected' : '';
+
+                    // Build tooltip with venues and dates
+                    let tooltip = `Week ${week}`;
+                    if (hasActivity) {
+                        const uniqueVenues = new Set();
+                        const uniqueDates = new Set();
+                        filteredWeekData.forEach(item => {
+                            uniqueVenues.add(item.venue);
+                            uniqueDates.add(formatDate(item.date));
+                        });
+                        tooltip = `Week ${week}\n${Array.from(uniqueVenues).join(', ')}\n${Array.from(uniqueDates).join(', ')}`;
+                    }
+
+                    html += `<div class="week-square ${activeClass} ${selectedClass}" data-year="${year}" data-week="${week}" title="${tooltip}">${week}</div>`;
+                }
+
+                html += `</div></div>`;
+            }
+
+            container.innerHTML = html;
+
+            // Add click handlers to active week squares
+            document.querySelectorAll('.week-square.active').forEach(square => {
+                square.addEventListener('click', () => {
+                    const year = parseInt(square.dataset.year);
+                    const week = parseInt(square.dataset.week);
+                    toggleWeekFilter(year, week);
+                });
+            });
+        }
+
+        // Toggle week filter
+        function toggleWeekFilter(year, week) {
+            if (selectedWeek && selectedWeek.year === year && selectedWeek.week === week) {
+                // Deselect
+                selectedWeek = null;
+            } else {
+                // Select
+                selectedWeek = { year, week };
+            }
+
+            // Update heatmap selection styling
+            document.querySelectorAll('.week-square').forEach(square => {
+                square.classList.remove('selected');
+            });
+            if (selectedWeek) {
+                const selected = document.querySelector(`.week-square[data-year="${selectedWeek.year}"][data-week="${selectedWeek.week}"]`);
+                if (selected) {
+                    selected.classList.add('selected');
+                }
+            }
+
+            // Clear date filter and reapply filters
+            document.getElementById('date-filter').value = '';
+            filtertracks();
+        }
+
+        // Filter tracks based on week selection
+        function filtertracksByWeek(track, year, week) {
+            if (!track.dateused) {
+                return false;
+            }
+
+            const trackYear = getYearFromDate(track.dateused);
+            const trackWeek = getWeekNumber(track.dateused);
+            return trackYear === year && trackWeek === week;
+        }
+
+        // Load tracks from JSON file
+        async function loadtracks() {
+            try {
+                const response = await fetch('quizmusic.json');
+                if (!response.ok) {
+                    throw new Error(`Failed to load quizmusic.json: ${response.statusText}`);
+                }
+                const data = await response.json();
+                alltracks = data.tracks || [];
+                filteredtracks = [...alltracks];
+               
+                populateVenueFilter();
+                renderHeatmap();
+                rendertracks();
+                updateStats();
+            } catch (error) {
+                showError(`Error loading music: ${error.message}. Make sure quizmusic.json is in the same directory as this HTML file.`);
+            }
+        }
+
+        // Populate venue filter dropdown with unique venues
+        function populateVenueFilter() {
+            const venueSet = new Set();
+           
+            alltracks.forEach(track => {
+                if (track.venue) {
+                    venueSet.add(track.venue);
+                }
+            });
+           
+            const venueFilter = document.getElementById('venue-filter');
+            const uniqueVenues = Array.from(venueSet).sort();
+           
+            uniqueVenues.forEach(venue => {
+                const option = document.createElement('option');
+                option.value = venue;
+                option.textContent = venue.charAt(0).toUpperCase() + venue.slice(1);
+                venueFilter.appendChild(option);
+            });
+        }
+
+        // Show error message
+        function showError(message) {
+            const errorDiv = document.getElementById('error-message');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        // Format date from YYYYMMDD to "8 Mar 2025" format
+        function formatDate(dateNum) {
+            const dateStr = dateNum.toString();
+            const year = dateStr.substring(0, 4);
+            const month = dateStr.substring(4, 6);
+            const day = dateStr.substring(6, 8);
+           
+            const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                              'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+           
+            const monthIndex = parseInt(month, 10) - 1;
+            const dayNum = parseInt(day, 10);
+           
+            return `${dayNum} ${monthNames[monthIndex]} ${year}`;
+        }
+
+        // Render venue
+        function renderVenue(track) {
+            if (!track.venue) return '';
+            
+            const venueClass = (() => {
+                switch(track.venue.toLowerCase()) {
+                    case 'old house':
+                        return 'venue-oldhouse';
+                    case 'six towns':
+                        return 'venue-sixtowns';
+                    case 'ball green':
+                        return 'venue-ballgreen';
+                    case 'little vic':
+                        return 'venue-littlevic';
+                    default:
+                        return 'venue-other';
+                }
+            })();
+            const matchTypeClass = `match-type-${track.usetype}`;
+                let usetypeDisplay = `(${track.usetype})`;
+                if (track.usetype && track.usetype.toUpperCase() === 'Y' && track.year) {
+                    usetypeDisplay = `(Y - ${track.year})`;
+                }
+                if (track.usetype && track.usetype.toUpperCase() === 'W' && track.nextword) {
+                    usetypeDisplay = `(W - ${track.nextword})`;
+                }
+                if (track.usetype && track.usetype.toUpperCase() === 'A') {
+                    usetypeDisplay = `(Artist)`;
+                }
+                if (track.usetype && track.usetype.toUpperCase() === 'T') {
+                    usetypeDisplay = `(Title)`;
+                }
+                return `<span class="venue-item ${venueClass}">
+                    ${track.venue.toUpperCase()} - ${formatDate(track.dateused)}
+                    <span class="${matchTypeClass}">${usetypeDisplay}</span>
+                </span>`;
+        }
+
+        // Get date from track
+        function gettrackDate(track) {
+            return track.dateused || Infinity;
+        }
+
+        // Sort tracks
+        function sorttracks(column) {
+            // Determine sort direction
+            if (currentSort.column === column) {
+                if (currentSort.direction === 'asc') {
+                    currentSort.direction = 'desc';
+                } else if (currentSort.direction === 'desc') {
+                    currentSort.direction = null;
+                    currentSort.column = null;
+                } else {
+                    currentSort.direction = 'asc';
+                }
+            } else {
+                currentSort.column = column;
+                currentSort.direction = 'asc';
+            }
+
+            // Update header classes
+            document.querySelectorAll('.sortable').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+                if (th.dataset.column === column) {
+                    if (currentSort.direction === 'asc') {
+                        th.classList.add('sort-asc');
+                    } else if (currentSort.direction === 'desc') {
+                        th.classList.add('sort-desc');
+                    }
+                }
+            });
+
+            // Sort the array
+            if (currentSort.direction) {
+                filteredtracks.sort((a, b) => {
+                    let aVal, bVal;
+                   
+                    if (column === 'venues') {
+                        // Sort by date
+                        aVal = gettrackDate(a);
+                        bVal = gettrackDate(b);
+                    } else {
+                        // Sort by string value (case-insensitive)
+                        aVal = a[column].toLowerCase();
+                        bVal = b[column].toLowerCase();
+                    }
+                   
+                    if (currentSort.direction === 'asc') {
+                        return aVal < bVal ? -1 : aVal > bVal ? 1 : 0;
+                    } else {
+                        return aVal > bVal ? -1 : aVal < bVal ? 1 : 0;
+                    }
+                });
+            } else {
+                // Reset to original filtered order
+                filtertracks();
+                return;
+            }
+
+            rendertracks();
+        }
+
+        // Render tracks table
+        function rendertracks() {
+            const tbody = document.getElementById('tracks-body');
+           
+            if (filteredtracks.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="3" class="no-results">No tracks found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = filteredtracks.map(track => `
+                <tr>
+                    <td>${track.artist}</td>
+                    <td>${track.title}</td>
+                    <td>${renderVenue(track)}</td>
+                </tr>
+            `).join('');
+        }
+
+        // Update stats
+        function updateStats() {
+            const stats = document.getElementById('stats');
+            stats.textContent = `Showing ${filteredtracks.length} of ${alltracks.length} tracks`;
+        }
+
+        // Filter tracks
+        function filtertracks() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const venueFilter = document.getElementById('venue-filter').value;
+            const dateFilterVal = document.getElementById('date-filter').value; // YYYY-MM-DD or empty
+            const dateFilter = dateFilterVal ? dateFilterVal.replace(/-/g, '') : '';
+
+            filteredtracks = alltracks.filter(track => {
+                const matchesartist = track.artist.toLowerCase().includes(searchTerm);
+                const matchestitle = track.title.toLowerCase().includes(searchTerm);
+                const matchesSearch = matchesartist || matchestitle;
+               
+                // Check venue filter
+                let matchesVenue = true;
+                if (venueFilter) {
+                    matchesVenue = track.venue === venueFilter;
+                }
+
+                // Check date filter (match dateused equal to selected date)
+                let matchesDate = true;
+                if (dateFilter) {
+                    matchesDate = track.dateused && track.dateused.toString() === dateFilter;
+                }
+
+                // Check week filter
+                let matchesWeek = true;
+                if (selectedWeek) {
+                    matchesWeek = filtertracksByWeek(track, selectedWeek.year, selectedWeek.week);
+                }
+               
+                return matchesSearch && matchesVenue && matchesDate && matchesWeek;
+            });
+
+            // Reapply current sort if active
+            if (currentSort.column && currentSort.direction) {
+                const column = currentSort.column;
+                const direction = currentSort.direction;
+                filteredtracks.sort((a, b) => {
+                    let aVal, bVal;
+                   
+                    if (column === 'venues') {
+                        aVal = gettrackDate(a);
+                        bVal = gettrackDate(b);
+                    } else {
+                        aVal = a[column].toLowerCase();
+                        bVal = b[column].toLowerCase();
+                    }
+                   
+                    if (direction === 'asc') {
+                        return aVal < bVal ? -1 : aVal > bVal ? 1 : 0;
+                    } else {
+                        return aVal > bVal ? -1 : aVal < bVal ? 1 : 0;
+                    }
+                });
+            }
+
+            rendertracks();
+            updateStats();
+        }
+
+        // Event listeners
+        document.getElementById('search').addEventListener('input', filtertracks);
+        document.getElementById('venue-filter').addEventListener('change', filtertracks);
+                // Also re-render heatmap when venue changes
+                document.getElementById('venue-filter').addEventListener('change', () => {
+                    renderHeatmap();
+                    filtertracks();
+                });
+        document.getElementById('date-filter').addEventListener('change', filtertracks);
+
+        // Add click listeners to sortable headers
+        document.querySelectorAll('.sortable').forEach(th => {
+            th.addEventListener('click', () => {
+                sorttracks(th.dataset.column);
+            });
+        });
+
+        // Load tracks on page load
+        loadtracks();
+    </script>
+</body>
+</html>

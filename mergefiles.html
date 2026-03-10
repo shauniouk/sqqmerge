@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQQ File Pack Merger</title>
 	<link rel="shortcut icon" type="image/png" sizes="16x16" href="packfolder.gif">
-	<script src="sqqmerge1.6.js"></script>
-	<link rel="stylesheet" type="text/css" href="sqqmerge1.5.css">
+	<script src="sqqmerge1.11.js"></script>
+	<link rel="stylesheet" type="text/css" href="sqqmerge1.8.css">
 </head>
 <body>
 
@@ -29,7 +29,12 @@
 					<button style="width:120px; height:20px;" onclick="document.getElementById('xmlFileInput').click()">Load .SQQ File</button>
 					<input type='file' id="xmlFileInput" style="display:none" accept=".sqq" onchange="loadXML()" />
 				</div>
-
+				<div>
+					<a style="text-decoration: none; color:white; margin-left: 100px; vertical-align: -webkit-baseline-middle;" href="mergefilespinpoint.html">Go To Pinpoint Merge</a>	
+				</div>
+				<div>
+					<a style="text-decoration: none; color:white; margin-left: 100px; vertical-align: -webkit-baseline-middle;" href="mergefilesmultitap.html">Go To Multi-Tap Merge</a>	
+				</div>
 			</div>
 			
 			<div class="loadedpacks">
@@ -94,6 +99,7 @@
 			<div class="loadedpacks">
 				<table id="sqqcreate">
 					<tr class="header">
+						<td style="width: 32px; text-align: center;">#</td>
 						<td style="width: 40px">type</td>
 						<td style="width: 625px">question</td>
 						<td style="width: 25px;"></td>
@@ -205,6 +211,8 @@
 			const questionType = document.getElementById('qtype').innerHTML;
 			return questionType;
 		}
+
+		loadNewPackFromLocalStorage();
 
 		</script>
 

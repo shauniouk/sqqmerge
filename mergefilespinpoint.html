@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQQ File Pack Merger</title>
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="packfolder.gif">
+	<script src="sqqmerge1.11.js"></script>
+	<link rel="stylesheet" type="text/css" href="sqqmerge1.8.css">
+</head>
+<body>
+
+	<div class="container2">
+
+		<div class="contgen">
+			<!--<input type="file" id="xmlFileInput" accept=".sqq" onchange="loadXML()" />-->
+			
+			<div style="display: flex; gap: 10px;">
+				<div style="padding: 5px; ">
+					<button style="width:120px; height:20px;" onclick="document.getElementById('xmlFileInput').click()">Load .SQP File</button>
+					<input type='file' id="xmlFileInput" style="display:none" accept=".sqp" onchange="loadXML()" />
+				</div>
+				<div>
+					<a style="text-decoration: none; color:white; margin-left: 100px; vertical-align: -webkit-baseline-middle;" href="mergefiles.html">Go To SQQ Merge</a>	
+				</div>
+				<div>
+					<a style="text-decoration: none; color:white; margin-left: 100px; vertical-align: -webkit-baseline-middle;" href="mergefilesmultitap.html">Go To Multi-Tap Merge</a>	
+				</div>
+			</div>
+			
+			<div class="loadedpacks">
+				<table id="sqqpacks">
+					<tr class="header">
+						<td style="width: 40px">Type</td>
+						<td style="width: 650px">Question</td>
+						<td style="width: 25px;"></td>
+						<td style="width: 25px;"></td>
+					</tr>
+				</table>
+			</div>
+		</div>	
+		
+		<div class="contgen">
+			<div style="display: flex; flex-direction: column; align-items: center;">
+				<div id="qheader" class="txt-bold txt-white txt-large pad-2">Question</div>
+				<div id="qtype" class="txt-bold txt-black pad-2 txt-center widthp95 mrg-b-5">TYPE</div>
+				<div id="qanswer">
+					<table style="border: 1px solid black; width: 500px; height: 185px; background-color: white;">
+						<tr style="vertical-align: top;">
+							<td style="width: 100px; height: 80px;"><b>Question:</b></td>
+							<td id="qd-question" contenteditable="true"></td>
+							<td style="width: 2px;"></td>
+						</tr>
+						<tr style="vertical-align: top;">
+							<td style="height: 5px;"><b></b></td>
+							<td id="qd-short" contenteditable="true"></td>
+							<td></td>
+						</tr>
+						<tr style="vertical-align: top;">
+							<td style="height: 60px;"><b>Long Answer:</b></td>
+							<td id="qd-long" contenteditable="true"></td>
+							<td></td>
+						</tr>
+						<tr style="height: 5px; vertical-align: top;">
+							<td><b></b></td>
+							<td id="qd-options"></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div id="qd-add" style="width: 100%; padding-right: 4px; display: flex; justify-content: flex-end;">
+					<a style="color: white; text-decoration: none;" href=# onclick='addQuestionToNewPack(this);'>add to new pack</a>
+				</div>
+				<div id="qpicheader" class="txt-bold txt-white txt-large pad-2">
+					<button id="changePicture" style="margin-right: 50px;">Change Picture</button>
+					Picture</div>
+				<div id="qpicture" style="border: 1px solid black;">
+					<img id="qpic" style="width: 480px; height: 690px; background-color: silver;" />
+				</div>
+			</div>
+		</div>
+			
+		<div class="contgen">	
+			<div style="padding: 5px;">
+				<div style="float: left; width: 150px;">
+					<a class="download" href="#" onclick="downloadSQQFile('generated pack','');">Download SQP Pack</a>					
+				</div>
+				<input style="width: 260px; margin-right: 20px;" type="text" name="name" value="My Pack Name" id="packname">	
+					<b style="color: white;">Question Count: </b><span style="color: white;" id="qcount">0</span>
+			</div>
+		
+			<div class="loadedpacks">
+				<table id="sqqcreate">
+					<tr class="header">
+						<td style="width: 32px; text-align: center;">#</td>
+						<td style="width: 40px">type</td>
+						<td style="width: 625px">question</td>
+						<td style="width: 25px;"></td>
+						<td style="width: 25px;"></td>
+						<td style="width: 25px;"></td>
+						<td style="width: 25px;"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<script> 
+		function createMenu(menuData, parentElement) {
+			const ul = document.createElement('ul');
+			ul.className = 'mcd-menu';
+		
+			menuData.forEach(item => {
+				const li = document.createElement('li');
+				const a = document.createElement('a');
+				
+				if (item.onclick) {
+					a.href = '#';
+					a.onclick = new Function(item.onclick);
+
+				} else {
+					a.href = '#';
+					a.style.fontWeight = 'bold';
+				}
+		
+				if (item.description) {
+					a.innerHTML = `<strong>${item.name}</strong><small>${item.description}</small>`;
+				} else {
+					if (item.onclick) {
+						a.innerHTML = `<div style="display: flex; align-items:center;"><img src="sqfile.svg" style="width: 22px; padding-right: 5px;" />${item.name}</div>`;
+					} else {
+						a.innerHTML = `<div style="display: flex; align-items:center;"><img src="folder.svg" style="width: 22px; padding-right: 5px;" />${item.name}</div>`;
+					}
+				}
+		
+
+				li.appendChild(a);
+		
+				if (item.submenu) {
+					createMenu(item.submenu, li);
+				}
+		
+				ul.appendChild(li);
+			});
+		
+			parentElement.appendChild(ul);
+		}
+		
+		document.getElementById('qd-question').addEventListener('input', function() {
+			const questionDiv = document.getElementById('qd-add');
+			if (questionDiv.dataxml) {
+				const parser = new DOMParser();
+				const xmlDoc = parser.parseFromString(questionDiv.dataxml, 'text/xml');
+				const qAnswerElement = xmlDoc.querySelector('q');
+				if (qAnswerElement) {
+					qAnswerElement.textContent = this.textContent;
+					questionDiv.dataxml = new XMLSerializer().serializeToString(xmlDoc);
+				}
+			}
+		});
+
+		document.getElementById('qd-short').addEventListener('input', function() {
+			const questionDiv = document.getElementById('qd-add');
+
+			if (questionDiv.dataxml) {
+				const parser = new DOMParser();
+				const xmlDoc = parser.parseFromString(questionDiv.dataxml, 'text/xml');
+				const shortAnswerElement = xmlDoc.querySelector('short_answer');
+				if (shortAnswerElement) {
+
+					if (getCurrentQuestionType() == "LETTERS") {
+						this.textContent = this.textContent.charAt(0).toUpperCase();
+					} 
+					shortAnswerElement.textContent = this.textContent;
+
+					questionDiv.dataxml = new XMLSerializer().serializeToString(xmlDoc);
+				}
+			}
+		});
+
+		document.getElementById('qd-long').addEventListener('input', function() {
+			const questionDiv = document.getElementById('qd-add');
+			if (questionDiv.dataxml) {
+				const parser = new DOMParser();
+				const xmlDoc = parser.parseFromString(questionDiv.dataxml, 'text/xml');
+				const longAnswerElement = xmlDoc.querySelector('long_answer');
+				if (longAnswerElement) {
+					longAnswerElement.textContent = this.textContent;
+					questionDiv.dataxml = new XMLSerializer().serializeToString(xmlDoc);
+				}
+			}
+		});
+
+		function getCurrentQuestionType() {
+			const questionType = document.getElementById('qtype').innerHTML;
+			return questionType;
+		}
+
+		questionPackType = "sqp";
+		loadNewPackFromLocalStorage();
+
+		// Add Change Picture functionality
+		const changePictureBtn = document.getElementById('changePicture');
+		let pictureInput = document.getElementById('pictureFileInput');
+		if (!pictureInput) {
+			pictureInput = document.createElement('input');
+			pictureInput.type = 'file';
+			pictureInput.accept = 'image/*';
+			pictureInput.id = 'pictureFileInput';
+			pictureInput.style.display = 'none';
+			document.body.appendChild(pictureInput);
+		}
+
+		changePictureBtn.addEventListener('click', function() {
+			pictureInput.value = null;
+			pictureInput.click();
+		});
+
+		pictureInput.addEventListener('change', function(event) {
+			const file = event.target.files[0];
+			if (!file) return;
+			const reader = new FileReader();
+			reader.onload = function(e) {
+				const imgData = e.target.result;
+				// Resize image to 480x690 if needed
+				const img = new Image();
+				img.onload = function() {
+					let width = img.width;
+					let height = img.height;
+					if (width !== 480 || height !== 690) {
+						// Create canvas to resize
+						const canvas = document.createElement('canvas');
+						canvas.width = 480;
+						canvas.height = 690;
+						const ctx = canvas.getContext('2d');
+						ctx.drawImage(img, 0, 0, 480, 690);
+						var resizedData = canvas.toDataURL('image/png');
+					} else {
+						var resizedData = imgData;
+					}
+					// Only update the XML, not the <img> directly
+					const questionDiv = document.getElementById('qd-add');
+					if (questionDiv.dataxml) {
+						const parser = new DOMParser();
+						const xmlDoc = parser.parseFromString(questionDiv.dataxml, 'text/xml');
+						let picElem = xmlDoc.querySelector('picture');
+						if (!picElem) {
+							picElem = xmlDoc.createElement('picture');
+							xmlDoc.documentElement.appendChild(picElem);
+						}
+						// Remove old content
+						while (picElem.firstChild) picElem.removeChild(picElem.firstChild);
+						// Add new base64 content
+						picElem.appendChild(xmlDoc.createTextNode(resizedData.replace(/^data:image\/(png|jpeg|jpg|png);base64,/, '')));
+						questionDiv.dataxml = new XMLSerializer().serializeToString(xmlDoc);
+					}
+					// Now trigger a refresh of the question display to reload the image from XML
+					if (typeof showPicture === 'function') {
+						const parser = new DOMParser();
+						const xmlDoc = parser.parseFromString(questionDiv.dataxml, 'text/xml');
+						showPicture(xmlDoc);
+					}
+				};
+				img.src = imgData;
+			};
+			reader.readAsDataURL(file);
+		});
+		</script>
+
+</body>
+</html>
+
+

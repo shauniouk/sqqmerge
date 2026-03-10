@@ -1,0 +1,257 @@
+body {
+	font-family: "Segoe UI",Arial,sans-serif;
+	font-size: 10pt;
+	background-color: #4a4a4a;
+	}
+
+input.up, input.down, input.delete {font: 10pt webdings;}
+
+/* Styles for main containers */
+div.contgen {
+	background-color: #383838;
+	position: absolute;
+	top: 5px;
+	height: 800px;
+	padding: 5px;
+	border-radius: 0.5em;
+	border: 1px solid black;
+}
+
+div.contleft {
+	left: 5px;
+	width: 580px;
+	}
+
+div.contmid {
+	left: 605px;
+	width: 350px;
+}
+
+div.contright {
+	left: 975px;
+	width: 580px;
+	}
+
+
+/* Header for packs */
+tr.header {
+	background-color: black; 
+	color: white; 
+	font-weight: bold;
+	border-bottom: 1px solid black;
+	padding-left: 5px;
+	}
+			
+	
+/* Pack headers and questions container */
+
+div.loadedpacks {
+	height: 750px;
+	overflow: auto;
+	float: left;
+}
+
+/* Question preview */
+
+div.q-header {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	height: 18px;
+	width: 350px;
+	background-color: black;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	display: block;
+}
+
+div.q-picheader {
+	position: absolute;
+	top: 326px;
+	left: 5px;
+	height: 18px;
+	width: 350px;
+	background-color: black;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	display: block;
+}
+
+div.q-answer {
+	position: absolute;
+	top: 24px;
+	left: 5px;
+	height: 300px;
+	width: 350px;
+	background-color: white;
+	display: block;
+}
+
+div.q-picture {
+	position: absolute;
+	top: 345px;
+	left: 20px;
+	height: 460px;
+	width: 320px;
+	background-color: lightgray;
+	display: block;
+	
+}
+
+/* General Table */
+
+table {
+		padding: 0px;
+		border: 1px solid black;
+		border-spacing: 0px;
+		border-collapse: collapse;
+		}
+		
+th, td {
+		padding: 2px;
+		}
+
+
+/* Pack displays */
+
+tr.packheader {
+	background-color: #9f9f9f;
+	color: black;
+	font-weight: bold;
+}
+
+tr.pack {
+		color: black; 
+		border-bottom: 1px solid black;
+		}
+			
+tr.odd {
+		background-color: white; 
+		}
+
+tr.even {
+		background-color: white; 
+		}
+		
+/* anchors */
+a.download {
+	color: white;
+	text-decoration: none;
+	}	
+	
+a.download:visited {
+	color: white;
+	}
+	
+/* menu css */
+.fourth-level-menu
+{
+    position: absolute;
+    top: 0px;
+    right: -150px;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.fourth-level-menu > li
+{
+    height: 20px;
+    background: #999999;
+}
+.fourth-level-menu > li:hover { background: #FFFFFF; }
+
+
+.third-level-menu
+{
+    position: absolute;
+    top: 0px;
+    right: -150px;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.third-level-menu > li
+{
+    height: 20px;
+    background: #999999;
+}
+.third-level-menu > li:hover { background: #FFFFFF; }
+
+.second-level-menu
+{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+		z-index: 100;
+}
+
+.second-level-menu > li
+{
+    position: relative;
+    height: 20px;
+    background: #999999;
+}
+.second-level-menu > li:hover { background: #FFFFFF; }
+
+.top-level-menu
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-level-menu > li
+{
+    position: relative;
+    float: left;
+    height: 20px;
+    width: 150px;
+    background: #999999;
+	margin-top: 5px;
+}
+.top-level-menu > li:hover { background: #FFFFFF; }
+
+.top-level-menu li:hover > ul
+{
+    /* On hover, display the next level's menu */
+    display: inline;
+}
+
+
+/* Menu Link Styles */
+
+.top-level-menu a /* Apply to all links inside the multi-level menu */
+{
+	color: #000000;
+	font-weight: bold;
+    background-color: #efefef;
+    text-decoration: none;
+    padding: 0 0 0 10px;
+	z-index: 100;
+
+    /* Make the link cover the entire list item-container */
+    display: block;
+    line-height: 20px;
+}
+.top-level-menu a:hover { color: #0000FF; }
+
+img.sqqpack {
+	background-image: url("packfolder.gif");
+	width: 16px; 
+	height: 13px;
+	float: left; 
+	margin: 3px;
+}

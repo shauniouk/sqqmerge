@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<round>
+    <game>Keypad Quiz</game>
+    <title>SQQ Merge Packer</title>
+    <points_per_question>4</points_per_question>
+    <go_wide>false</go_wide>
+    <speed_bonus>true</speed_bonus>
+    <questions>		
+        <question>
+			<user_view>letters</user_view>
+			<sq>true</sq>
+			<q>Name The Artist</q>
+			<short_answer>A</short_answer>
+			<long_answer>Artist</long_answer>
+		</question>
+        <question>
+			<user_view>letters</user_view>
+			<sq>true</sq>
+			<q>Name The Song</q>
+			<short_answer>A</short_answer>
+			<long_answer>Song</long_answer>
+		</question>
+        <question>
+			<user_view>letters</user_view>
+			<sq>true</sq>
+			<q>The next word is...</q>
+			<short_answer>A</short_answer>
+			<long_answer>Word</long_answer>
+		</question>
+        <question>
+            <user_view>numbers</user_view>
+            <q>Name the year</q>
+            <short_answer>1980</short_answer>
+            <long_answer />
+        </question>
+    </questions>
+</round>
